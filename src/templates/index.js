@@ -3,11 +3,11 @@ import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 
-import Nav from "../components/nav"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ScrollTopArrow from "../components/scroll-arrow"
+import Nav from "../components/nav"
 import AudioPlayer from "../components/audio-player"
+import ScrollTopArrow from "../components/scroll-arrow"
 import { rhythm } from "../utils/typography"
 
 const shortcodes = { AudioPlayer }

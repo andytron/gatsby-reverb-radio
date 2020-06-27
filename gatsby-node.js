@@ -1,12 +1,13 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-
-exports.createPages = async ({ graphql, actions }) => {
+const blogPost = path.resolve(`./src/templates/blog-post.js`)
+const sitePage = path.resolve(`./src/templates/live-page.js`)
+const indexPage = path.resolve(`./src/templates/index.js`)
+exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-
-  const allData = await graphql(`
+  return graphql(`
     {
-      allPosts: allMdx(
+      allMdx(
         sort: { fields: [frontmatter___date], order: DESC }
         limit: 1000
       ) {
@@ -18,87 +19,69 @@ exports.createPages = async ({ graphql, actions }) => {
             }
             frontmatter {
               slug
-              title
               templateKey
-            }
-          }
-        }
-      }
-      blogPosts: allMdx(
-        filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-        sort: { fields: [frontmatter___date], order: DESC }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              slug
               title
-              templateKey
             }
           }
         }
       }
     }
-  `)
+  `).then(result => {
+    if (result.errors) {
+      result.errors.forEach(e => console.error(e.toString()))
+      return Promise.reject(result.errors)
+    }
 
-  const { allPosts, blogPosts } = allData.data
+    const posts = result.data.allMdx.edges
 
-  // Create blog posts pages
-  const posts = blogPosts.edges
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+    posts.forEach((edge, index) => {
+      const id = edge.node.id
 
-  posts
-    .forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
+      if (edge.node.frontmatter.templateKey === 'blog-post') {
+        const previous = index === posts.length - 1 ? null : posts[index + 1].node
+        const next = index === 0 ? null : posts[index - 1].node
+        createPage({
+          path: `post${edge.node.fields.slug}`,
+          component: blogPost,
+          context: {
+            slug: edge.node.fields.slug,
+            id,
+            previous,
+            next,
+          },
+        })
+      } else {
+        createPage({
+          path: edge.node.fields.slug,
+          component: sitePage,
+          context: {
+            // slug: edge.node.fields.slug,
+            id,
+          },
+        })
+      }
 
-      createPage({
-        path: `post${post.node.fields.slug}`,
-        component: blogPost,
-        context: {
-          slug: post.node.fields.slug,
-          previous,
-          next,
-        },
+      // templates/index pagination
+      const blogPosts = posts.filter(edge => edge.node.frontmatter.templateKey === 'blog-post')
+      const postsPerPage = 15
+      const numPages = Math.ceil(blogPosts.length / postsPerPage)
+
+      Array.from({ length: numPages }).forEach((_, i) => {
+        createPage({
+          path: i === 0 ? `/` : `/page/${i + 1}`,
+          component: indexPage,
+          context: {
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numPages,
+            currentPage: i + 1,
+          },
+        })
       })
     })
 
-  const postsPerPage = 15
-  const numPages = Math.ceil(posts.length / postsPerPage)
-
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/` : `/page/${i + 1}`,
-      component: path.resolve("./src/templates/index.js"),
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-      },
-    })
+    return null
   })
-
-  allPosts.edges
-    .filter(post => post.node.frontmatter.templateKey !== "blog-post")
-    .forEach(post => {
-      const id = post.node.id
-
-      createPage({
-        path: post.node.fields.slug,
-        component: path.resolve(
-          `./src/templates/${String(post.node.frontmatter.templateKey)}.js`
-        ),
-        context: {
-          id,
-        },
-      })
-    })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

@@ -8,8 +8,8 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
-media_folder: content/images
-public_folder: ../images
+media_folder: static/images
+public_folder: /images
 
 collections:
   - name: posts
@@ -19,7 +19,12 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       # - { label: Path, name: path }
-      - { label: "Template Key", name: templateKey, widget: hidden, default: "blog-post" }
+      - {
+          label: "Template Key",
+          name: templateKey,
+          widget: hidden,
+          default: "blog-post",
+        }
       - { label: Title, name: title, widget: string }
       # - { label: Date, name: date, widget: date }
       - { label: Date, name: date, widget: datetime }
@@ -31,9 +36,14 @@ collections:
     label: Pages
     files:
       - file: "src/pages/live/index.md"
-        label: "Live"
-        name: "live"
+        label: Live
+        name: live
         fields:
-          - { label: "Template Key", name: templateKey, widget: hidden, default: "live-page" }
+          - {
+              label: "Template Key",
+              name: templateKey,
+              widget: hidden,
+              default: "live-page",
+            }
           - { label: Title, name: title, widget: string }
           - { label: Body, name: body, widget: markdown }

@@ -1,15 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Nav from "../components/nav"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Nav from "../components/nav"
 import Content, { HTMLContent } from "../components/content"
 
 export const LivePageTemplate = ({ content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
-  return <PageContent content={content} />
+  return (
+    <PageContent content={content} />
+  )
 }
 
 const LivePage = ({ data }) => {
@@ -32,13 +34,13 @@ const LivePage = ({ data }) => {
 export default LivePage
 
 export const livePageQuery = graphql`
-  query LivePageQuery {
+  query LivePage($id: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMdx(filter: { frontmatter: { templateKey: { eq: "live-page" } } }) {
+    allMdx(filter: {id: {eq: $id}}) {
       edges {
         node {
           id
