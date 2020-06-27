@@ -55,7 +55,7 @@ exports.createPages = ({ graphql, actions }) => {
           path: edge.node.fields.slug,
           component: sitePage,
           context: {
-            // slug: edge.node.fields.slug,
+            slug: edge.node.fields.slug,
             id,
           },
         })

@@ -15,16 +15,16 @@ export const LivePageTemplate = ({ content, contentComponent }) => {
 }
 
 const LivePage = ({ data }) => {
-  const { allMdx: post } = data
+  const { mdx: post } = data
   const siteTitle = data.site.siteMetadata.title
   const location = window.location
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Live" />
+      <SEO title={siteTitle} />
       <Nav />
       <LivePageTemplate
-        content={post.edges[0].node.body}
+        content={post.body}
         contentComponent={HTMLContent}
       />
     </Layout>
@@ -40,15 +40,11 @@ export const livePageQuery = graphql`
         title
       }
     }
-    allMdx(filter: {id: {eq: $id}}) {
-      edges {
-        node {
-          id
-          body
-          frontmatter {
-            title
-          }
-        }
+    mdx(id: {eq: $id}) {
+      body
+      id
+      frontmatter {
+        title
       }
     }
   }

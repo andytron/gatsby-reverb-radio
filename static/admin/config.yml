@@ -35,7 +35,7 @@ collections:
   - name: "pages"
     label: Pages
     files:
-      - file: "src/pages/live/index.md"
+      - file: "content/pages/live/index.md"
         label: Live
         name: live
         fields:

@@ -45,6 +45,7 @@ const BlogPost = ({ data, pageContext, location }) => {
   const post = data.mdx
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
+  console.log(pageContext)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -84,7 +85,7 @@ const BlogPost = ({ data, pageContext, location }) => {
           )}
         </li>
         <li>
-          {next && (
+          {(next && next.frontmatter.templateKey === 'blog-post') && (
             <Link to={`post${next.fields.slug}`} rel="next">
               {next.frontmatter.title > 18
                 ? next.frontmatter.title.substring(0, 15) + "..."
