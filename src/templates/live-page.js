@@ -14,10 +14,9 @@ export const LivePageTemplate = ({ content, contentComponent }) => {
   )
 }
 
-const LivePage = ({ data }) => {
+const LivePage = ({ data, location }) => {
   const { mdx: post } = data
   const siteTitle = data.site.siteMetadata.title
-  const location = window.location
 
   return (
     <Layout location={location} title={siteTitle}>
