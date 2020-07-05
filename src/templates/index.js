@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import moment from "moment"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 
@@ -17,6 +18,7 @@ class Index extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMdx.edges
+    const libsynPosts = data.allJson
 
     const { currentPage, numPages } = this.props.pageContext
     const isFirst = currentPage === 1
@@ -36,6 +38,54 @@ class Index extends React.Component {
               textAlign: "center",
             }}
           >
+            {libsynPosts.edges.map(({ node }) => {
+              const title = node.node.title
+              return (
+                // <pre>{title}</pre>
+                <div className="blog-roll__item" key={node.fields.slug}>
+                  <h3
+                    className="blog-roll__item-header"
+                    style={{
+                      marginBottom: rhythm(1 / 4),
+                      letterSpacing: "2px",
+                    }}
+                  >
+                    <Link
+                      style={{
+                        boxShadow: `none`,
+                        color: `#666`,
+                        fontWeight: `700`,
+                      }}
+                      to={`post/${node.fields.slug}`}
+                    >
+                      {title}
+                    </Link>
+                  </h3>
+                  <small>
+                    {moment(node.node.pubDate).format("MMMM Do, YYYY")}
+                  </small>
+                  <div
+                    className="post-wrapper"
+                    style={{ marginTop: rhythm(1 / 2) }}
+                  >
+                    {node.node.itunes.image && (
+                      <img src={node.node.itunes.image} alt={title} />
+                    )}
+                    <AudioPlayer source={node.node.link} />
+                    <a href={node.node.link}>{node.node.title}</a>
+                    <p>{node.node.content.encoded}</p>
+                  </div>
+                  <Link
+                    className="icon-link"
+                    style={{ boxShadow: `none` }}
+                    to={`post/${node.fields.slug}`}
+                  >
+                    &#10084;
+                  </Link>
+                </div>
+              )
+            })}
+
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
@@ -169,10 +219,31 @@ class Index extends React.Component {
 export default Index
 
 export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
+  query indexPageQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
+      }
+    }
+    allJson: allLibsynJson(limit: $limit, skip: $skip) {
+      edges {
+        node {
+          node {
+            title
+            pubDate
+            link
+            itunes {
+              image
+              keywords
+            }
+            content {
+              encoded
+            }
+          }
+          fields {
+            slug
+          }
+        }
       }
     }
     allMdx(

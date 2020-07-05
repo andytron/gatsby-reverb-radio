@@ -70,18 +70,28 @@ body {
 }
 
 .post-wrapper {
-  p {
+  p,
+  a {
     font-size: 14px;
+  }
+  p {
     &:last-of-type {
       margin-bottom: 1rem;
     }
   }
   a {
+    font-weight: 700;
     color: #666;
   }
 }
 
 .blog-roll {
+  &__item {
+    @media (min-width: 30rem) {
+      margin: 0 auto;
+      max-width: 512px;
+    }
+  }
   &__item-header {
     font-family: $serif;
   }

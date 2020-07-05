@@ -7,8 +7,15 @@ const libsynPost = path.resolve(`./src/templates/libsyn-post.js`)
 const sitePage = path.resolve(`./src/templates/live-page.js`)
 const indexPage = path.resolve(`./src/templates/index.js`)
 
+function buildSlug(date, title) {
+  return `${moment(date).format("YYYY-MM-DD")}${title
+    .replace(/\W+/g, "-")
+    .toLowerCase()}`
+}
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
+
   return graphql(`
     {
       allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
@@ -63,28 +70,24 @@ exports.createPages = ({ graphql, actions }) => {
           ? null
           : {
               ...libsynPosts[index + 1].node,
-              slug: buildSlug(
+              slug: `post/${buildSlug(
                 libsynPosts[index + 1].node.pubDate,
                 libsynPosts[index + 1].node.title
-              )
+              )}`
             }
       const next =
         index === 0
           ? null
           : {
               ...libsynPosts[index - 1].node,
-              slug: buildSlug(
+              slug: `post/${buildSlug(
                 libsynPosts[index - 1].node.pubDate,
                 libsynPosts[index - 1].node.title
-              ),
+              )}`
             }
 
-      function buildSlug(date, title) {
-        return `post/${moment(date).format("YYYY-MM-DD")}${title.replace(/\W+/g, '-').toLowerCase()}`
-      }
-
       createPage({
-        path: buildSlug(edge.node.pubDate, edge.node.title),
+        path: `post/${buildSlug(edge.node.pubDate, edge.node.title)}`,
         component: libsynPost,
         context: {
           slug: buildSlug(edge.node.pubDate, edge.node.title),
@@ -125,12 +128,13 @@ exports.createPages = ({ graphql, actions }) => {
         })
       }
 
-      // templates/index pagination
+      // index page pagination
       const blogPosts = posts.filter(
         edge => edge.node.frontmatter.templateKey === "blog-post"
       )
+      const allShowPosts = [...blogPosts, ...libsynPosts]
       const postsPerPage = 15
-      const numPages = Math.ceil(blogPosts.length / postsPerPage)
+      const numPages = Math.ceil(allShowPosts.length / postsPerPage)
 
       Array.from({ length: numPages }).forEach((_, i) => {
         createPage({
@@ -176,11 +180,18 @@ exports.onCreateNode = ({ node, actions, getNode, createContentDigest }) => {
     }
     createNode(textNode)
 
-    // Create markdownBody___NODE field
+    // create markdownBody___NODE field
     createNodeField({
       node,
       name: `markdownBody___NODE`,
       value: textNode.id,
+    })
+
+    // create slug field
+    createNodeField({
+      name: `slug`,
+      node,
+      value: buildSlug(node.node.pubDate, node.node.title)
     })
   }
 }

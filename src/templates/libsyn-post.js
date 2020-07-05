@@ -32,6 +32,7 @@ export const LibsynPostTemplate = ({ post, content }) => {
       </p>
       {post.itunes.image && <img src={post.itunes.image} alt={post.title} />}
       <AudioPlayer source={post.link} />
+      <a href={post.link}>{post.title}</a>
       <Content content={content} />
     </div>
   )
