@@ -47,6 +47,14 @@ module.exports = {
         name: `images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data`,
+        name: `data`,
+      },
+    },
+    `gatsby-transformer-json`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -104,6 +112,26 @@ module.exports = {
           `libre baskerville:300,400,600,700`,
         ],
         display: `swap`,
+      },
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://joeroganexp.joerogan.libsynpro.com/rss`,
+        // url: `http://wtfpod.libsyn.com/rss`,
+        // url: `https://reverberationradio.libsyn.com/rss`,
+        name: `ReverbRadio`,
+        // Optional: parser document https://github.com/bobby-brennan/rss-parser#readme
+        parserOption: {
+          customFields: {
+            title: ["title"],
+            date: ["pubDate"],
+            audio: ["link"],
+            artwork: ["itunes:image"],
+            description: ["description"],
+            keywords: ["itunes:keywords"],
+          },
+        },
       },
     },
     // {

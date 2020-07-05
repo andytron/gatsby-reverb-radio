@@ -3864,6 +3864,11 @@ bluebird@^3.0.5, bluebird@^3.5.5, bluebird@^3.7.0:
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.1.tgz#df70e302b471d7473489acf26a93d63b53f874de"
   integrity sha512-DdmyoGCleJnkbp3nkbxTLJ18rjDsE4yCggEwKNXkeV123sPNfOCYeDoeuOY+F2FrSjO1YXcTU+dsy96KMy+gcg==
 
+bluebird@^3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
+  integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
+
 bmp-js@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/bmp-js/-/bmp-js-0.1.0.tgz#e05a63f796a6c1ff25f4771ec7adadc148c07233"
@@ -7618,6 +7623,14 @@ gatsby-source-filesystem@^2.0.29:
     valid-url "^1.0.9"
     xstate "^4.6.7"
 
+gatsby-source-rss-feed@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-source-rss-feed/-/gatsby-source-rss-feed-1.2.0.tgz#661ff37eb7040d907d7af98768dce38e3d474ec3"
+  integrity sha512-1XulMO1MKURZdqaISuPfhBpcfm0sr1DZeOZLd4XakqTJvZ0pqLWP/dk/8F21do/RPBtjfwfuhuq42f3i/qIw2g==
+  dependencies:
+    lodash "^4.17.15"
+    rss-parser "^3.7.6"
+
 gatsby-telemetry@^1.1.33:
   version "1.1.33"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.1.33.tgz#2c0956c95e7d341e2740d8c4f3a3ffd6bc636c4e"
@@ -7640,6 +7653,14 @@ gatsby-telemetry@^1.1.33:
     stack-trace "^0.0.10"
     stack-utils "1.0.2"
     uuid "3.3.3"
+
+gatsby-transformer-json@^2.4.10:
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.4.10.tgz#cd1edc186eddb13f029ba2bdeee73aa9af9317be"
+  integrity sha512-K03GerPcIhG6NgzxDpgA1v86xfA4K1sfPi2YnZG1L9sZAAsbrTaioiGhK0jWy4P00XweASPJQzgiHXGlvbEfeg==
+  dependencies:
+    "@babel/runtime" "^7.10.3"
+    bluebird "^3.7.2"
 
 gatsby-transformer-sharp@^2.1.18:
   version "2.2.23"
@@ -14459,6 +14480,14 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+rss-parser@^3.7.6:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/rss-parser/-/rss-parser-3.8.0.tgz#6ab883c5cfb69202e25c76fe2b17e3e9179a39f6"
+  integrity sha512-EvjM0r3IymXnk+SCUawLhdH36D2WQCwpEfIyvu4hpPswYuMSk/jlCLOcg24OvXwVdcJcEocAlTZVjGNjOOSJXg==
+  dependencies:
+    entities "^1.1.1"
+    xml2js "^0.4.19"
+
 rss@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/rss/-/rss-1.2.2.tgz#50a1698876138133a74f9a05d2bdc8db8d27a921"
@@ -17317,6 +17346,14 @@ xml-parse-from-string@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/xml-parse-from-string/-/xml-parse-from-string-1.0.1.tgz#a9029e929d3dbcded169f3c6e28238d95a5d5a28"
   integrity sha1-qQKekp09vN7RafPG4oI42VpdWig=
+
+xml2js@^0.4.19:
+  version "0.4.23"
+  resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.4.23.tgz#a0c69516752421eb2ac758ee4d4ccf58843eac66"
+  integrity sha512-ySPiMjM0+pLDftHgXY4By0uswI3SPKLDw/i3UXbnO8M/p28zqexCUoPmQFrYD+/1BzhGJSs2i1ERWKJAtiLrug==
+  dependencies:
+    sax ">=0.6.0"
+    xmlbuilder "~11.0.0"
 
 xml2js@^0.4.5:
   version "0.4.22"

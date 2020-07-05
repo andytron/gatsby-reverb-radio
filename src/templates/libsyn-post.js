@@ -1,19 +1,15 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { MDXProvider } from "@mdx-js/react"
+import moment from "moment"
 
 import Nav from "../components/nav"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import AudioPlayer from "../components/audio-player"
 import Content, { HTMLContent } from "../components/content"
+import AudioPlayer from "../components/audio-player"
 import { rhythm, scale } from "../utils/typography"
 
-const shortcodes = { AudioPlayer }
-
-export const BlogPostTemplate = ({ post, content, contentComponent }) => {
-  const PostContent = contentComponent || Content
-
+export const LibsynPostTemplate = ({ post, content }) => {
   return (
     <div
       className="post-item"
@@ -22,7 +18,7 @@ export const BlogPostTemplate = ({ post, content, contentComponent }) => {
       }}
     >
       <h1 style={{ letterSpacing: "2px", color: "#666", fontWeight: "700" }}>
-        {post.frontmatter.title}
+        {post.title}
       </h1>
       <p
         style={{
@@ -32,29 +28,29 @@ export const BlogPostTemplate = ({ post, content, contentComponent }) => {
           marginTop: rhythm(-1),
         }}
       >
-        {post.frontmatter.date}
+        {moment(post.pubDate).format("MMMM Do, YYYY")}
       </p>
-      <MDXProvider components={shortcodes}>
-        <PostContent content={content} />
-      </MDXProvider>
+      {post.itunes.image && <img src={post.itunes.image} alt={post.title} />}
+      <AudioPlayer source={post.link} />
+      <Content content={content} />
     </div>
   )
 }
 
-const BlogPost = ({ data, pageContext, location }) => {
-  const post = data.mdx
+const LibsynPost = ({ data, pageContext, location }) => {
+  const post = data.json.node
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
-        title={post.frontmatter.title}
+        title={post.title}
         // description={post.frontmatter.description || post.excerpt}
       />
-      <BlogPostTemplate
+      <LibsynPostTemplate
         post={post}
-        content={post.body}
+        content={post.content.encoded}
         contentComponent={HTMLContent}
       />
       <hr
@@ -75,20 +71,20 @@ const BlogPost = ({ data, pageContext, location }) => {
       >
         <li>
           {previous && (
-            <Link to={`post${previous.fields.slug}`} rel="prev">
+            <Link to={previous.slug} rel="prev">
               ←{" "}
-              {previous.frontmatter.title.length > 18
-                ? previous.frontmatter.title.substring(0, 15) + "..."
-                : previous.frontmatter.title}
+              {previous.title.length > 18
+                ? previous.title.substring(0, 15) + "..."
+                : previous.title}
             </Link>
           )}
         </li>
         <li>
-          {(next && next.frontmatter.templateKey === 'blog-post') && (
-            <Link to={`post${next.fields.slug}`} rel="next">
-              {next.frontmatter.title.length > 18
-                ? next.frontmatter.title.substring(0, 15) + "..."
-                : next.frontmatter.title}{" "}
+          {next && (
+            <Link to={next.slug} rel="next">
+              {next.title.length > 18
+                ? next.title.substring(0, 15) + "..."
+                : next.title}{" "}
               →
             </Link>
           )}
@@ -98,28 +94,35 @@ const BlogPost = ({ data, pageContext, location }) => {
   )
 }
 
-export default BlogPost
+export default LibsynPost
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query PostById($id: String!) {
     site {
       siteMetadata {
         title
         author
+        links {
+          tikiRocketUrl
+          podcast
+          instagram
+          twitter
+          email
+        }
       }
     }
-    mdx(
-      fields: { slug: { eq: $slug } }
-      frontmatter: { templateKey: { eq: "blog-post" } }
-    ) {
-      id
-      excerpt(pruneLength: 160)
-      body
-      frontmatter {
+    json: libsynJson(node: { id: { eq: $id } }) {
+      node {
         title
-        date(formatString: "MMMM DD, YYYY")
-        audio
-        slug
+        pubDate
+        link
+        itunes {
+          image
+          keywords
+        }
+        content {
+          encoded
+        }
       }
     }
   }
