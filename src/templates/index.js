@@ -17,14 +17,19 @@ class Index extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
+
+    const libsynPosts = data.allJson.edges
     const posts = data.allMdx.edges
-    const libsynPosts = data.allJson
+    let allPosts = [...libsynPosts, ...posts]
 
     const { currentPage, numPages } = this.props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
     const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString()
     const nextPage = (currentPage + 1).toString()
+    const postsPerPage = 15
+    
+    allPosts = allPosts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)
 
     return (
       <>
@@ -38,94 +43,93 @@ class Index extends React.Component {
               textAlign: "center",
             }}
           >
-            {libsynPosts.edges.map(({ node }) => {
-              const title = node.node.title
-              return (
-                // <pre>{title}</pre>
-                <div className="blog-roll__item" key={node.fields.slug}>
-                  <h3
-                    className="blog-roll__item-header"
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                      letterSpacing: "2px",
-                    }}
-                  >
-                    <Link
+            {allPosts.map(({ node }) => {
+              if (node.node) {
+                const title = node.node.title
+                return (
+                  <div className="blog-roll__item" key={node.fields.slug}>
+                    <h3
+                      className="blog-roll__item-header"
                       style={{
-                        boxShadow: `none`,
-                        color: `#666`,
-                        fontWeight: `700`,
+                        marginBottom: rhythm(1 / 4),
+                        letterSpacing: "2px",
                       }}
+                    >
+                      <Link
+                        style={{
+                          boxShadow: `none`,
+                          color: `#666`,
+                          fontWeight: `700`,
+                        }}
+                        to={`post/${node.fields.slug}`}
+                      >
+                        {title}
+                      </Link>
+                    </h3>
+                    <small>
+                      {moment(node.node.pubDate).format("MMMM Do, YYYY")}
+                    </small>
+                    <div
+                      className="post-wrapper"
+                      style={{ marginTop: rhythm(1 / 2) }}
+                    >
+                      {node.node.itunes.image && (
+                        <img src={node.node.itunes.image} alt={title} />
+                      )}
+                      <AudioPlayer source={node.node.link} />
+                      <a href={node.node.link}>{node.node.title}</a>
+                      <p>{node.node.content.encoded}</p>
+                    </div>
+                    <Link
+                      className="icon-link"
+                      style={{ boxShadow: `none` }}
                       to={`post/${node.fields.slug}`}
                     >
-                      {title}
+                      &#10084;
                     </Link>
-                  </h3>
-                  <small>
-                    {moment(node.node.pubDate).format("MMMM Do, YYYY")}
-                  </small>
-                  <div
-                    className="post-wrapper"
-                    style={{ marginTop: rhythm(1 / 2) }}
-                  >
-                    {node.node.itunes.image && (
-                      <img src={node.node.itunes.image} alt={title} />
-                    )}
-                    <AudioPlayer source={node.node.link} />
-                    <a href={node.node.link}>{node.node.title}</a>
-                    <p>{node.node.content.encoded}</p>
                   </div>
-                  <Link
-                    className="icon-link"
-                    style={{ boxShadow: `none` }}
-                    to={`post/${node.fields.slug}`}
-                  >
-                    &#10084;
-                  </Link>
-                </div>
-              )
-            })}
-
-            {posts.map(({ node }) => {
-              const title = node.frontmatter.title || node.fields.slug
-              return (
-                <div key={node.fields.slug}>
-                  <h3
-                    className="blog-roll__item-header"
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                      letterSpacing: "2px",
-                    }}
-                  >
-                    <Link
+                )
+              } else {
+                const title = node.frontmatter.title || node.fields.slug
+                return (
+                  <div key={node.fields.slug}>
+                    <h3
+                      className="blog-roll__item-header"
                       style={{
-                        boxShadow: `none`,
-                        color: `#666`,
-                        fontWeight: `700`,
+                        marginBottom: rhythm(1 / 4),
+                        letterSpacing: "2px",
                       }}
+                    >
+                      <Link
+                        style={{
+                          boxShadow: `none`,
+                          color: `#666`,
+                          fontWeight: `700`,
+                        }}
+                        to={`post${node.fields.slug}`}
+                      >
+                        {title}
+                      </Link>
+                    </h3>
+                    <small>{node.frontmatter.date}</small>
+                    <div
+                      className="post-wrapper"
+                      style={{ marginTop: rhythm(1 / 2) }}
+                    >
+                      <MDXProvider components={shortcodes}>
+                        <MDXRenderer>{node.body}</MDXRenderer>
+                      </MDXProvider>
+                    </div>
+                    <Link
+                      className="icon-link"
+                      style={{ boxShadow: `none` }}
                       to={`post${node.fields.slug}`}
                     >
-                      {title}
+                      &#10084;
                     </Link>
-                  </h3>
-                  <small>{node.frontmatter.date}</small>
-                  <div
-                    className="post-wrapper"
-                    style={{ marginTop: rhythm(1 / 2) }}
-                  >
-                    <MDXProvider components={shortcodes}>
-                      <MDXRenderer>{node.body}</MDXRenderer>
-                    </MDXProvider>
                   </div>
-                  <Link
-                    className="icon-link"
-                    style={{ boxShadow: `none` }}
-                    to={`post${node.fields.slug}`}
-                  >
-                    &#10084;
-                  </Link>
-                </div>
-              )
+                )
+              }
             })}
           </div>
 
@@ -219,13 +223,13 @@ class Index extends React.Component {
 export default Index
 
 export const pageQuery = graphql`
-  query indexPageQuery($skip: Int!, $limit: Int!) {
+  query IndexPageQuery {
     site {
       siteMetadata {
         title
       }
     }
-    allJson: allLibsynJson(limit: $limit, skip: $skip) {
+    allJson: allLibsynJson {
       edges {
         node {
           node {
@@ -249,8 +253,6 @@ export const pageQuery = graphql`
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-      limit: $limit
-      skip: $skip
     ) {
       edges {
         node {

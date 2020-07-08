@@ -1,6 +1,21 @@
 [
   {
     "node": {
+      "id": "25efb494-1195-56f3-afc4-17f0882225de",
+      "title": "#1503 - Josh Barnett",
+      "link": "http://traffic.libsyn.com/joeroganexp/p1503.mp3",
+      "itunes": {
+        "image": "http://static.libsyn.com/p/assets/b/3/d/7/b3d70e9350bf7a33/JRE1503.jpg",
+        "keywords": "podcast,joe,josh,party,experience,freak,rogan,barnett,deathsquad,jre,1503"
+      },
+      "content": {
+        "encoded": "Josh Barnett is a mixed martial artist and professional wrestler who competes in the Heavyweight division of Bellator."
+      },
+      "pubDate": "Tue, 07 Jul 2020 19:00:00 +0000"
+    }
+  },
+  {
+    "node": {
       "id": "b6f9ab1f-e209-554c-bdc6-49727f1340de",
       "title": "#1502 - Russell Peters",
       "link": "http://traffic.libsyn.com/joeroganexp/p1502.mp3",

@@ -132,17 +132,15 @@ exports.createPages = ({ graphql, actions }) => {
       const blogPosts = posts.filter(
         edge => edge.node.frontmatter.templateKey === "blog-post"
       )
-      const allShowPosts = [...blogPosts, ...libsynPosts]
+      const allPosts = [...blogPosts, ...libsynPosts]
       const postsPerPage = 15
-      const numPages = Math.ceil(allShowPosts.length / postsPerPage)
+      const numPages = Math.ceil(allPosts.length / postsPerPage)
 
       Array.from({ length: numPages }).forEach((_, i) => {
         createPage({
           path: i === 0 ? `/` : `/page/${i + 1}`,
           component: indexPage,
           context: {
-            limit: postsPerPage,
-            skip: i * postsPerPage,
             numPages,
             currentPage: i + 1,
           },
