@@ -11,28 +11,27 @@ import { rhythm, scale } from "../utils/typography"
 
 export const LibsynPostTemplate = ({ post, content }) => {
   return (
-    <div
-      className="post-item"
-      style={{
-        textAlign: "center",
-      }}
-    >
-      <h1 style={{ letterSpacing: "2px", color: "#666", fontWeight: "700" }}>
+    <div className="post">
+      <h1
+        className="post__title"
+        style={{ letterSpacing: "2px", color: "#666", fontWeight: "700" }}
+      >
         {post.title}
       </h1>
       <p
+        className="post__date"
         style={{
           ...scale(-1 / 5),
-          display: `block`,
-          marginBottom: "1rem",
           marginTop: rhythm(-1),
         }}
       >
         {moment(post.pubDate).format("MMMM Do, YYYY")}
       </p>
-      {post.itunes.image && <img src={post.itunes.image} alt={post.title} />}
-      <AudioPlayer source={post.link} />
-      <a href={post.link}>{post.title}</a>
+      {post.itunes.image && (
+        <img className="post__image" src={post.itunes.image} alt={post.title} />
+      )}
+      <AudioPlayer source={post.enclosure.url.replace(/\?.*$/g, "")} />
+      <a href={post.enclosure.url.replace(/\?.*$/g, "")}>{post.title}</a>
       <Content content={content} />
     </div>
   )
@@ -60,19 +59,14 @@ const LibsynPost = ({ data, pageContext, location }) => {
         }}
       />
       <Nav />
-      <ul
-        className="pagination--post"
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      >
+      <ul className="pagination pagination__post">
         <li>
           {previous && (
-            <Link to={previous.slug} rel="prev">
+            <Link
+              to={`/post/${previous.slug}`}
+              className="pagination__post--prev"
+              rel="prev"
+            >
               ←{" "}
               {previous.title.length > 18
                 ? previous.title.substring(0, 15) + "..."
@@ -82,7 +76,11 @@ const LibsynPost = ({ data, pageContext, location }) => {
         </li>
         <li>
           {next && (
-            <Link to={next.slug} rel="next">
+            <Link
+              to={`/post/${next.slug}`}
+              className="pagination__post--next"
+              rel="next"
+            >
               {next.title.length > 18
                 ? next.title.substring(0, 15) + "..."
                 : next.title}{" "}
@@ -117,6 +115,9 @@ export const pageQuery = graphql`
         title
         pubDate
         link
+        enclosure {
+          url
+        }
         itunes {
           image
           keywords

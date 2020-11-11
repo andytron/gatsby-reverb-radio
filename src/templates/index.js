@@ -28,62 +28,57 @@ class Index extends React.Component {
     const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString()
     const nextPage = (currentPage + 1).toString()
     const postsPerPage = 15
-    
-    allPosts = allPosts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)
+
+    allPosts = allPosts.slice(
+      (currentPage - 1) * postsPerPage,
+      currentPage * postsPerPage
+    )
 
     return (
       <>
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title="Home" />
           <Nav />
-          <div
-            className="blog-roll"
-            style={{
-              margin: "20px 0 40px",
-              textAlign: "center",
-            }}
-          >
+          <div className="blog-post__list">
             {allPosts.map(({ node }) => {
               if (node.node) {
                 const title = node.node.title
                 return (
-                  <div className="blog-roll__item" key={node.fields.slug}>
+                  <div className="blog-post" key={node.fields.slug}>
                     <h3
-                      className="blog-roll__item-header"
+                      className="blog-post__title"
                       style={{
                         marginBottom: rhythm(1 / 4),
-                        letterSpacing: "2px",
                       }}
                     >
                       <Link
-                        style={{
-                          boxShadow: `none`,
-                          color: `#666`,
-                          fontWeight: `700`,
-                        }}
-                        to={`post/${node.fields.slug}`}
+                        className="blog-post__link"
+                        to={`/post/${node.fields.slug}`}
                       >
                         {title}
                       </Link>
                     </h3>
-                    <small>
+                    <small className="blog-post__date">
                       {moment(node.node.pubDate).format("MMMM Do, YYYY")}
                     </small>
                     <div
-                      className="post-wrapper"
+                      className="blog-post__content"
                       style={{ marginTop: rhythm(1 / 2) }}
                     >
                       {node.node.itunes.image && (
                         <img src={node.node.itunes.image} alt={title} />
                       )}
-                      <AudioPlayer source={node.node.link} />
-                      <a href={node.node.link}>{node.node.title}</a>
+                      <AudioPlayer
+                        source={node.node.enclosure.url || node.node.link}
+                      />
+                      <a href={node.node.enclosure.url || node.node.link}>
+                        {node.node.title}
+                      </a>
                       <p>{node.node.content.encoded}</p>
                     </div>
                     <Link
-                      className="icon-link"
-                      style={{ boxShadow: `none` }}
-                      to={`post/${node.fields.slug}`}
+                      className="blog-post__icon"
+                      to={`/post/${node.fields.slug}`}
                     >
                       &#10084;
                     </Link>
@@ -92,28 +87,25 @@ class Index extends React.Component {
               } else {
                 const title = node.frontmatter.title || node.fields.slug
                 return (
-                  <div key={node.fields.slug}>
+                  <div className="blog-post" key={node.fields.slug}>
                     <h3
-                      className="blog-roll__item-header"
+                      className="blog-post__title"
                       style={{
                         marginBottom: rhythm(1 / 4),
-                        letterSpacing: "2px",
                       }}
                     >
                       <Link
-                        style={{
-                          boxShadow: `none`,
-                          color: `#666`,
-                          fontWeight: `700`,
-                        }}
-                        to={`post${node.fields.slug}`}
+                        className="blog-post__link"
+                        to={`/post${node.fields.slug}`}
                       >
                         {title}
                       </Link>
                     </h3>
-                    <small>{node.frontmatter.date}</small>
+                    <small className="blog-post__date">
+                      {node.frontmatter.date}
+                    </small>
                     <div
-                      className="post-wrapper"
+                      className="blog-post__content"
                       style={{ marginTop: rhythm(1 / 2) }}
                     >
                       <MDXProvider components={shortcodes}>
@@ -121,9 +113,8 @@ class Index extends React.Component {
                       </MDXProvider>
                     </div>
                     <Link
-                      className="icon-link"
-                      style={{ boxShadow: `none` }}
-                      to={`post${node.fields.slug}`}
+                      className="blog-post__icon"
+                      to={`/post${node.fields.slug}`}
                     >
                       &#10084;
                     </Link>
@@ -133,34 +124,13 @@ class Index extends React.Component {
             })}
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "0 auto",
-              color: "#333",
-            }}
-          >
-            &#10086;
-          </div>
-          <div
-            className="pagination--list"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              margin: "0 auto",
-              maxWidth: "50%",
-              fontSize: "14px",
-            }}
-          >
+          <div className="bumper">&#10086;</div>
+          <div className="pagination pagination__home">
             {!isFirst && (
               <Link
-                to={currentPage === 2 ? `/` : `page/${prevPage}`}
+                className="pagination__home--prev"
+                to={currentPage === 2 ? `/` : `/page/${prevPage}`}
                 rel="prev"
-                style={{
-                  boxShadow: "none",
-                  marginRight: "1rem",
-                }}
               >
                 &larr; Newer
               </Link>
@@ -192,12 +162,9 @@ class Index extends React.Component {
             )).slice(currentPage - 1, currentPage + 4)} */}
             {!isLast && (
               <Link
-                to={`page/${nextPage}`}
+                className="pagination__home--next"
+                to={`/page/${nextPage}`}
                 rel="next"
-                style={{
-                  boxShadow: "none",
-                  marginLeft: "1rem",
-                }}
               >
                 Older &rarr;
               </Link>
@@ -236,6 +203,9 @@ export const pageQuery = graphql`
             title
             pubDate
             link
+            enclosure {
+              url
+            }
             itunes {
               image
               keywords

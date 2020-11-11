@@ -16,7 +16,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-feed-mdx`,
     `gatsby-plugin-sass`,
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
@@ -110,6 +109,7 @@ module.exports = {
         fonts: [
           `raleway:300,400,600,700,900`,
           `libre baskerville:300,400,600,700`,
+          `barlow condensed:300,400,500,600,700,800,900`,
         ],
         display: `swap`,
       },
@@ -117,16 +117,14 @@ module.exports = {
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
-        url: `http://joeroganexp.joerogan.libsynpro.com/rss`,
-        // url: `http://wtfpod.libsyn.com/rss`,
-        // url: `https://reverberationradio.libsyn.com/rss`,
+        url: `https://reverberationradio.libsyn.com/rss`,
         name: `ReverbRadio`,
         // Optional: parser document https://github.com/bobby-brennan/rss-parser#readme
         parserOption: {
           customFields: {
             title: ["title"],
             date: ["pubDate"],
-            audio: ["link"],
+            audio: ["enclosure.$.url"],
             artwork: ["itunes:image"],
             description: ["description"],
             keywords: ["itunes:keywords"],
@@ -159,12 +157,12 @@ module.exports = {
         icon: `content/images/reverblogo.png`,
       },
     },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-typography`,
+    //   options: {
+    //     pathToConfigModule: `src/utils/typography`,
+    //   },
+    // },
     // {
     //   resolve: `gatsby-plugin-purgecss`,
     //   options: {

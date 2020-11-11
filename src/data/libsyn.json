@@ -1,332 +1,56 @@
 [
   {
     "node": {
-      "id": "25efb494-1195-56f3-afc4-17f0882225de",
-      "title": "#1503 - Josh Barnett",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1503.mp3",
+      "id": "a965880f-298b-5c4c-9112-d5f84f00a983",
+      "title": "Reverberation_403",
+      "link": "https://reverberationradio.libsyn.com/reverberation_403",
+      "enclosure": {
+        "url": "https://traffic.libsyn.com/secure/reverberationradio/Reverberation_403.mp3?dest-id=145455"
+      },
       "itunes": {
-        "image": "http://static.libsyn.com/p/assets/b/3/d/7/b3d70e9350bf7a33/JRE1503.jpg",
-        "keywords": "podcast,joe,josh,party,experience,freak,rogan,barnett,deathsquad,jre,1503"
+        "image": "https://ssl-static.libsyn.com/p/assets/b/d/5/d/bd5d73aebed2b92d/Banana_Face_Logo_-_pandora.png",
+        "keywords": ""
       },
       "content": {
-        "encoded": "Josh Barnett is a mixed martial artist and professional wrestler who competes in the Heavyweight division of Bellator."
+        "encoded": ""
       },
-      "pubDate": "Tue, 07 Jul 2020 19:00:00 +0000"
+      "pubDate": "Fri, 25 Sep 2020 05:50:45 +0000"
     }
   },
   {
     "node": {
-      "id": "b6f9ab1f-e209-554c-bdc6-49727f1340de",
-      "title": "#1502 - Russell Peters",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1502.mp3",
+      "id": "2725c6bd-1d3e-59e1-a744-dbd0b0ee105e",
+      "title": "Reverberation_402.mp3",
+      "link": "https://reverberationradio.libsyn.com/reverberation_402",
+      "enclosure": {
+        "url": "https://traffic.libsyn.com/secure/reverberationradio/Reverberation_402.mp3?dest-id=145455"
+      },
       "itunes": {
-        "image": "http://static.libsyn.com/p/assets/5/7/b/3/57b368e5f8f1b71f/JRE1502.jpg",
-        "keywords": "podcast,joe,party,experience,russell,peters,freak,rogan,deathsquad,jre,1502"
+        "image": "https://ssl-static.libsyn.com/p/assets/b/d/5/d/bd5d73aebed2b92d/Banana_Face_Logo_-_pandora.png",
+        "keywords": ""
       },
       "content": {
-        "encoded": "Russell Peters is an actor and stand up comedian. His latest stand up special \"Deported\" is now available on Amazon Prime."
+        "encoded": ""
       },
-      "pubDate": "Fri, 03 Jul 2020 19:00:00 +0000"
+      "pubDate": "Sat, 05 Sep 2020 20:02:49 +0000"
     }
   },
   {
     "node": {
-      "id": "41a7d16a-f52f-57db-9ccb-1656f11ba890",
-      "title": "#1501 - James Lindsay",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1501.mp3",
+      "id": "fa0c6b46-7dae-5884-8658-91e03141873d",
+      "title": "Reverberation_401.mp3",
+      "link": "https://reverberationradio.libsyn.com/reverberation_401mp3",
+      "enclosure": {
+        "url": "https://traffic.libsyn.com/secure/reverberationradio/Reverberation_401.mp3?dest-id=145455"
+      },
       "itunes": {
-        "image": "http://static.libsyn.com/p/assets/7/b/e/9/7be9bf52413e20a4/JRE1501.jpg",
-        "keywords": "podcast,james,joe,party,experience,lindsay,freak,rogan,deathsquad,jre,1501"
+        "image": "https://ssl-static.libsyn.com/p/assets/b/d/5/d/bd5d73aebed2b92d/Banana_Face_Logo_-_pandora.png",
+        "keywords": ""
       },
       "content": {
-        "encoded": "James Lindsay is an author, mathematician, and political commentator. His latest book, co-authored with Helen Pluckrose, Cynical Theories: How Activist Scholarship Made Everything about Race, Gender, and Identity―and Why This Harms Everybody will be available on August 25, 2020."
+        "encoded": ""
       },
-      "pubDate": "Thu, 02 Jul 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "0d5215be-c3b2-51ad-af7c-1d7b8daf5b53",
-      "title": "#1500 - Barbara Freese",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1500.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/d/c/f/8/dcf8999a70ece2d9/JRE1500.jpg",
-        "keywords": "podcast,joe,party,experience,freak,barbara,rogan,freese,deathsquad,1500,jre"
-      },
-      "content": {
-        "encoded": "Barbara Freese is an author, environmental attorney and a former Minnesota assistant attorney general. Her latest book Industrial-Strength Denial is now available: https://www.ucpress.edu/book/9780520296282/industrial-strength-denial"
-      },
-      "pubDate": "Wed, 01 Jul 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "b2b31f54-10bb-5b84-b815-6ffec6095110",
-      "title": "#1499 - Aron Snyder",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1499a.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/c/5/4/a/c54ae696e3f4fee7/JRE1499A.jpg",
-        "keywords": "podcast,joe,party,experience,aron,freak,rogan,snyer,deathsquad,1499,jre,kifaru"
-      },
-      "content": {
-        "encoded": "Aron Snyder is the President at Kifaru international, and also the host of the KifaruCast podcast available on Apple Podcasts."
-      },
-      "pubDate": "Tue, 30 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "07bccdfb-36d5-5080-a720-c7e6eb2e026e",
-      "title": "#1498 - Jon Stewart",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1498.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/c/f/6/0/cf607600fb769968/JRE1498.jpg",
-        "keywords": "podcast,joe,party,experience,stewart,jon,freak,rogan,deathsquad,jre,1498"
-      },
-      "content": {
-        "encoded": "Jon Stewart is a comedian, director, writer, producer, activist, and television host. He's the director fo the new film \"Irresistible\" that releases on June 26, 2020."
-      },
-      "pubDate": "Fri, 26 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "d710e919-11fd-526c-b72b-33e250434746",
-      "title": "#1497 - Joe Schilling",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1497.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/e/5/5/1/e551fd72c30def95/JRE1497a.jpg",
-        "keywords": "podcast,joe,party,experience,freak,rogan,schilling,deathsquad,jre,1497"
-      },
-      "content": {
-        "encoded": "Joe Schilling is an American Muay Thai kickboxer and MMA fighter who competes in the super middleweight and light heavyweight and the Middleweight division of Bellator MMA."
-      },
-      "pubDate": "Thu, 25 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "eb663fe4-4135-570b-8f25-e30ca06c0e8a",
-      "title": "#1496 - Colion Noir",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1496.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/4/0/8/8/40889947e37ba378/JRE1496.jpg",
-        "keywords": "podcast,joe,party,experience,noir,freak,rogan,deathsquad,jre,colion,1496"
-      },
-      "content": {
-        "encoded": "Colion Noir is a gun rights activist, lawyer, member of the National Rifle Association. Check out more of his content on his YouTube channel: "
-      },
-      "pubDate": "Tue, 23 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "2310e8c9-2028-5194-8d4b-0648e616d869",
-      "title": "#1495 - Kyle Dunnigan",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1495.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/b/7/0/3/b7036cf68c2a3562/JRE1495.jpg",
-        "keywords": "podcast,joe,party,experience,kyle,freak,rogan,deathsquad,dunnigan,jre,1495"
-      },
-      "content": {
-        "encoded": "Kyle Dunnigan is a writer, actor and comedian. Check out his hilarious Instagram page: https://www.instagram.com/kyledunnigan1/"
-      },
-      "pubDate": "Fri, 19 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "2b9485a0-8185-502d-a1a6-4c1d9f2fae54",
-      "title": "#1494 - Bret Weinstein",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1494.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/2/6/2/a/262a8dc150107cb1/JRE1494.jpg",
-        "keywords": "podcast,joe,party,experience,weinstein,freak,rogan,bret,deathsquad,jre,1493"
-      },
-      "content": {
-        "encoded": "Bret Weinstein was a biology professor at Evergreen State College in Olympia, WA. He is now hosting \"Bret Weinstein's Dark Horse Podcast\" available on Apple Podcasts and YouTube."
-      },
-      "pubDate": "Thu, 18 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "37152516-d6c9-50b5-a44c-d5fff25ca8a6",
-      "title": "#1493 - Steve Schirripa & Michael Imperioli",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1493.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/b/5/2/7/b527c917024b72f9/JRE1493.jpg",
-        "keywords": "podcast,steve,joe,party,experience,michael,freak,rogan,deathsquad,imperioli,schirripa,jre,1493"
-      },
-      "content": {
-        "encoded": "Steve Schirripa & Michael Imperioli were co-stars on the HBO show The Sopranos, and are now together hosting a re-watch podcast called \"Talking Sopranos\" that is available now on Apple Podcasts."
-      },
-      "pubDate": "Tue, 16 Jun 2020 23:07:07 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "eba69f5d-282f-56bc-82f2-65eea8b90349",
-      "title": "#1492 - Jocko Willink",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1492.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/8/1/9/e/819ec254fbba082c/JRE1492.jpg",
-        "keywords": "podcast,joe,party,experience,freak,rogan,1492,deathsquad,jre,jocko,willink"
-      },
-      "content": {
-        "encoded": "Jocko Willink is a decorated retired Navy SEAL officer, author of the book Extreme Ownership: How U.S. Navy SEALs Lead and Win, and co-founder of Echelon Front, where he is a leadership instructor, speaker, and executive coach. His podcast, The Jocko Podcast, is also available for download via Apple Podcasts & Stitcher."
-      },
-      "pubDate": "Tue, 16 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "75744e30-5087-5085-8293-ed8d65bec1fe",
-      "title": "#1491 - Bill Burr",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1491.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/d/9/5/5/d955a1b8b1fe3b90/JRE1491a.jpg",
-        "keywords": "podcast,joe,party,experience,bill,burr,freak,rogan,deathsquad,jre,1491"
-      },
-      "content": {
-        "encoded": "Bill Burr is a standup comedian and also hosts his own podcast called “The Monday Morning Podcast”. Look for him in the new film \"The King of Staten Island\" available for streaming everywhere, and also on the 4th season of his show \"F Is for Family\" streaming only on Netflix, both available on June 12."
-      },
-      "pubDate": "Fri, 12 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "bb47b729-48ac-54e3-94cf-d80105ba5d2d",
-      "title": "#1490 - Jimmy O. Yang",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1490.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/c/f/e/1/cfe14f85f7778b0b/JRE1490.jpg",
-        "keywords": "joe,party,experience,jimmy,o,freak,yang,rogan,deathsquad,jre,1490"
-      },
-      "content": {
-        "encoded": "Jimmy O. Yang is an actor, stand-up comedian, and writer. Check out his new special \"Jimmy O. Yang: Good Deal\" available to stream now on Amazon Prime."
-      },
-      "pubDate": "Thu, 11 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "58dd8cdd-4871-55c8-b51d-94948774d92a",
-      "title": "#1489 - Ronnie Coleman",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1489.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/4/6/c/0/46c0c3c17ee1383f/JRE1489.jpg",
-        "keywords": "podcast,coleman,joe,party,experience,ronnie,freak,rogan,deathsquad,jre,1489"
-      },
-      "content": {
-        "encoded": "Ronnie Coleman is a retired professional bodybuilder. He is a 8-time consecutive winner of Mr.Olympia, and also won a record 26 titles as a IFBB professional."
-      },
-      "pubDate": "Wed, 10 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "887afec4-6896-526b-a506-96177caddbb9",
-      "title": "#1488 - Andrew Schulz",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1488.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/7/6/5/6/7656ea01a5481e92/JRE1488.jpg",
-        "keywords": "podcast,joe,party,experience,andrew,schulz,freak,rogan,deathsquad,jre,1488"
-      },
-      "content": {
-        "encoded": "Andrew Schulz is a stand up comedian, actor, and host. Check out his podcasts \"Flagrant 2\" & \"The Brilliant Idiots\" co-hosted with Charlamagne tha God."
-      },
-      "pubDate": "Tue, 09 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "32ad85e4-bcce-50b8-978b-ce0a997adc0e",
-      "title": "JRE MMA Show #97 with Henry Cejudo",
-      "link": "http://traffic.libsyn.com/joeroganexp/mmashow097.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/1/2/7/8/12787fcb22237270/JRE1487A.jpg",
-        "keywords": "podcast,mma,97,show,joe,party,experience,henry,freak,rogan,deathsquad,jre,cejudo"
-      },
-      "content": {
-        "encoded": "Joe sits down with the former UFC flyweight champion and UFC bantamweight champion, Henry Cejudo."
-      },
-      "pubDate": "Tue, 09 Jun 2020 04:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "47849086-b778-5d9b-9b0e-38d0e111b3b1",
-      "title": "#1487 - Janet Zuccarini & Evan Funke",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1487.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/2/b/0/b/2b0b81134b670ea1/JRE1487.jpg",
-        "keywords": "podcast,joe,evan,party,experience,janet,freak,rogan,funke,deathsquad,jre,zuccarini,1487"
-      },
-      "content": {
-        "encoded": "Janet Zuccarini is the CEO & owner of Gusto 54 Restaurant Group. Evan Funke is a master pasta maker and the chef-owner of Felix Trattoria in Venice, CA."
-      },
-      "pubDate": "Sat, 06 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "748ce87b-e4c7-5187-bd25-9c001bbd9048",
-      "title": "#1486 - Honey Honey",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1486a.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/d/3/9/4/d3944236b838dd3a/JRE1486.jpg",
-        "keywords": "podcast,joe,party,experience,honey,freak,rogan,deathsquad,jre,1486"
-      },
-      "content": {
-        "encoded": "Honey Honey is a band, featuring members Suzanne Santo and Ben Jaffe, from Los Angeles, CA."
-      },
-      "pubDate": "Fri, 05 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "389f1bb8-72a2-532a-a4b5-76c13891c39a",
-      "title": "#1485 - Krystal & Saagar",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1485a.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/e/f/2/f/ef2f0b0ae0a4b445/JRE1485.jpg",
-        "keywords": "podcast,the,hill,joe,party,experience,rising,krystal,freak,rogan,deathsquad,jre,saagar,1485"
-      },
-      "content": {
-        "encoded": "Krystal & Saagar are the hosts of Rising, an American daily news and opinion web series produced by Washington, D.C. political newspaper The Hill."
-      },
-      "pubDate": "Wed, 03 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "39468b26-6179-5aaf-971b-24dc2ffb5945",
-      "title": "#1484 - Reggie Watts",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1484.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/3/8/1/3/3813f11123be89ab/JRE1484.jpg",
-        "keywords": "podcast,joe,party,experience,reggie,watts,freak,rogan,deathsquad,jre,1484"
-      },
-      "content": {
-        "encoded": "Reggie Watts is a musician, singer, beatboxer, actor, and comedian. His improvised musical sets are created using only his voice, a keyboard, and a looping machine. He is also currently the announcer and band leader on The Late Late Show with James Corden."
-      },
-      "pubDate": "Tue, 02 Jun 2020 19:00:00 +0000"
-    }
-  },
-  {
-    "node": {
-      "id": "fef431c2-7d31-5137-8eab-c5644e20336f",
-      "title": "#1483 - Jesus Trejo",
-      "link": "http://traffic.libsyn.com/joeroganexp/p1483.mp3",
-      "itunes": {
-        "image": "http://static.libsyn.com/p/assets/2/4/6/7/24670c431d0a2819/JRE1483.jpg",
-        "keywords": "podcast,joe,party,experience,jesus,freak,rogan,trejo,deathsquad,jre,1483"
-      },
-      "content": {
-        "encoded": "Jesus Trejo is a comedian, actor and writer. His new special \"Stay At Home Son\" premieres on Showtime on May 29. "
-      },
-      "pubDate": "Fri, 29 May 2020 19:00:00 +0000"
+      "pubDate": "Fri, 10 Jul 2020 07:02:22 +0000"
     }
   }
 ]

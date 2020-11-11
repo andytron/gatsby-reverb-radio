@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 
 const ScrollTopArrow = () => {
-  const [showArrow, setShowArrow] = useState(false);
+  const [showArrow, setShowArrow] = useState(false)
 
   useEffect(() => {
     const checkScrollTop = () => {
@@ -12,30 +12,31 @@ const ScrollTopArrow = () => {
       }
     }
 
-    window.addEventListener('scroll', checkScrollTop)
+    window.addEventListener("scroll", checkScrollTop)
 
     return () => {
-      window.removeEventListener('scroll', checkScrollTop)
+      window.removeEventListener("scroll", checkScrollTop)
     }
   }, [showArrow])
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     })
   }
 
   return (
-    <div
-      className="icon__scroll-arrow"
+    <button
+      className="btn__scroll"
       onClick={scrollToTop}
       style={{
-        display: showArrow ? 'flex' : 'none'
+        display: showArrow ? "flex" : "none",
       }}
+      tabIndex="0"
     >
       <span>&#8613;</span>
-    </div>
+    </button>
   )
 }
 

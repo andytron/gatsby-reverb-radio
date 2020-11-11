@@ -18,18 +18,10 @@ class NotFoundPage extends React.Component {
             textAlign: "center",
           }}
         >
-          <h3
-            style={{
-              letterSpacing: "2px",
-              color: "#666",
-              fontWeight: "700",
-            }}
-          >
-            Not Found
-          </h3>
-          <p style={{ fontSize: "14px" }}>
+          <h3 className="not-found__title">Not Found</h3>
+          <p className="not-found__text">
             The URL you requested could not be found. Go back{" "}
-            <Link to="/" style={{ color: "black" }}>
+            <Link to="/" className="not-found__link">
               home
             </Link>
             .

@@ -8,7 +8,7 @@ const sitePage = path.resolve(`./src/templates/live-page.js`)
 const indexPage = path.resolve(`./src/templates/index.js`)
 
 function buildSlug(date, title) {
-  return `${moment(date).format("YYYY-MM-DD")}${title
+  return `${moment(date).format("YYYY-MM-DD")}-${title
     .replace(/\W+/g, "-")
     .toLowerCase()}`
 }
@@ -41,6 +41,9 @@ exports.createPages = ({ graphql, actions }) => {
             id
             title
             link
+            enclosure {
+              url
+            }
             itunes {
               image
               keywords
@@ -61,7 +64,10 @@ exports.createPages = ({ graphql, actions }) => {
 
     const libsynPosts = result.data.allFeedReverbRadio.edges
 
-    fs.writeFileSync('./src/data/libsyn.json', JSON.stringify(libsynPosts, null, 2))
+    fs.writeFileSync(
+      "./src/data/libsyn.json",
+      JSON.stringify(libsynPosts, null, 2)
+    )
 
     libsynPosts.forEach((edge, index) => {
       const id = edge.node.id
@@ -70,20 +76,20 @@ exports.createPages = ({ graphql, actions }) => {
           ? null
           : {
               ...libsynPosts[index + 1].node,
-              slug: `post/${buildSlug(
+              slug: `${buildSlug(
                 libsynPosts[index + 1].node.pubDate,
                 libsynPosts[index + 1].node.title
-              )}`
+              )}`,
             }
       const next =
         index === 0
           ? null
           : {
               ...libsynPosts[index - 1].node,
-              slug: `post/${buildSlug(
+              slug: `${buildSlug(
                 libsynPosts[index - 1].node.pubDate,
                 libsynPosts[index - 1].node.title
-              )}`
+              )}`,
             }
 
       createPage({

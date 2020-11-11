@@ -15,20 +15,12 @@ export const BlogPostTemplate = ({ post, content, contentComponent }) => {
   const PostContent = contentComponent || Content
 
   return (
-    <div
-      className="post-item"
-      style={{
-        textAlign: "center",
-      }}
-    >
-      <h1 style={{ letterSpacing: "2px", color: "#666", fontWeight: "700" }}>
-        {post.frontmatter.title}
-      </h1>
+    <div className="post">
+      <h1 className="post__title">{post.frontmatter.title}</h1>
       <p
+        className="post__date"
         style={{
           ...scale(-1 / 5),
-          display: `block`,
-          marginBottom: "1rem",
           marginTop: rhythm(-1),
         }}
       >
@@ -63,19 +55,14 @@ const BlogPost = ({ data, pageContext, location }) => {
         }}
       />
       <Nav />
-      <ul
-        className="pagination--post"
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      >
+      <ul className="pagination pagination__post">
         <li>
           {previous && (
-            <Link to={`post${previous.fields.slug}`} rel="prev">
+            <Link
+              to={`/post${previous.fields.slug}`}
+              className="pagination__post--prev"
+              rel="prev"
+            >
               ←{" "}
               {previous.frontmatter.title.length > 18
                 ? previous.frontmatter.title.substring(0, 15) + "..."
@@ -84,8 +71,12 @@ const BlogPost = ({ data, pageContext, location }) => {
           )}
         </li>
         <li>
-          {(next && next.frontmatter.templateKey === 'blog-post') && (
-            <Link to={`post${next.fields.slug}`} rel="next">
+          {next && next.frontmatter.templateKey === "blog-post" && (
+            <Link
+              to={`/post${next.fields.slug}`}
+              className="pagination__post--next"
+              rel="next"
+            >
               {next.frontmatter.title.length > 18
                 ? next.frontmatter.title.substring(0, 15) + "..."
                 : next.frontmatter.title}{" "}

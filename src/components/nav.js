@@ -16,37 +16,41 @@ function Nav() {
       render={data => {
         const { links } = data.site.siteMetadata
         return (
-          <Container>
-            <ul
-              className="nav-list"
-              style={{
-                display: `flex`,
-                flexWrap: `wrap`,
-                justifyContent: `center`,
-                width: "100%",
-                padding: 0,
-                listStyle: `none`,
-                letterSpacing: "2px",
-              }}
-            >
-              <li>
-                <a href={`https://${links.tikiRocketUrl}`}>Tiki Rocket</a>
+          <Container className="nav">
+            <ul className="nav__list">
+              <li className="nav__list-item">
+                <a
+                  href={`https://${links.tikiRocketUrl}`}
+                  className="nav__link"
+                >
+                  Tiki Rocket
+                </a>
               </li>
-              <li>
+              <li className="nav__list-item">
                 <a
                   href={`https://podcasts.apple.com/us/podcast/${links.podcast}`}
+                  className="nav__link"
                 >
                   Podcast
                 </a>
               </li>
-              <li>
-                <a href={`https://instagram.com/${links.instagram}`}>Insta</a>
+              <li className="nav__list-item">
+                <a
+                  href={`https://instagram.com/${links.instagram}`}
+                  className="nav__link"
+                >
+                  Insta
+                </a>
               </li>
-              <li>
-                <Link to="/live">Live</Link>
+              <li className="nav__list-item">
+                <Link to="/live" className="nav__link">
+                  Live
+                </Link>
               </li>
-              <li>
-                <a href={`mailto:${links.email}`}>Contact</a>
+              <li className="nav__list-item">
+                <a href={`mailto:${links.email}`} className="nav__link">
+                  Contact
+                </a>
               </li>
             </ul>
           </Container>
