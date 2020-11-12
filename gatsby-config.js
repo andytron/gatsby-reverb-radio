@@ -98,9 +98,28 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Reverberation Radio`,
+        short_name: `Reverb Radio`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `content/images/reverblogo.png`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
+        customizeWebpackConfig: (config, { plugins }) => {
+          config.plugins.push(
+            plugins.define({
+              __MANIFEST_PLUGIN_HAS_LOCALISATION__: JSON.stringify('false'),
+            }),
+          );
+        },
       },
     },
     {
@@ -143,18 +162,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Reverberation Radio`,
-        short_name: `Reverb Radio`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `content/images/reverblogo.png`,
       },
     },
     // {
