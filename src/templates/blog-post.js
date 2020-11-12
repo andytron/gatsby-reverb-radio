@@ -35,6 +35,7 @@ export const BlogPostTemplate = ({ post, content, contentComponent }) => {
 
 const BlogPost = ({ data, pageContext, location }) => {
   const post = data.mdx
+  const libsynPost = data.libsyn
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
@@ -83,6 +84,18 @@ const BlogPost = ({ data, pageContext, location }) => {
               →
             </Link>
           )}
+          {next && next.id === "f928acb6-6340-5cc4-a6d8-58c9602a35bf" && (
+            <Link
+              to={`/post/${libsynPost.fields.slug}`}
+              className="pagination__post--next"
+              rel="next"
+            >
+              {libsynPost.node.title.length > 18
+                ? libsynPost.node.title.substring(0, 15) + "..."
+                : libsynPost.node.title}{" "}
+              →
+            </Link>
+          )}
         </li>
       </ul>
     </Layout>
@@ -110,6 +123,14 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         audio
+        slug
+      }
+    }
+    libsyn: libsynJson(id: {eq: "87c5e6b5-d41c-5702-8d0c-5f3135b54c90"}) {
+      node {
+        title
+      }
+      fields {
         slug
       }
     }

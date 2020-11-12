@@ -69,11 +69,21 @@ exports.createPages = ({ graphql, actions }) => {
       JSON.stringify(libsynPosts, null, 2)
     )
 
+    const posts = result.data.allMdx.edges
+
+    const blogPosts = posts.filter(
+      edge => edge.node.frontmatter.templateKey === "blog-post"
+    )
+
     libsynPosts.forEach((edge, index) => {
       const id = edge.node.id
       const previous =
         index === libsynPosts.length - 1
-          ? null
+          ? {
+            ...blogPosts[0].node,
+            slug: blogPosts[0].node.fields.slug.replace('/', ''),
+            title: blogPosts[0].node.frontmatter.title
+          }
           : {
               ...libsynPosts[index + 1].node,
               slug: `${buildSlug(
@@ -104,15 +114,15 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
-    const posts = result.data.allMdx.edges
-
     posts.forEach((edge, index) => {
       const id = edge.node.id
 
       if (edge.node.frontmatter.templateKey === "blog-post") {
         const previous =
           index === posts.length - 1 ? null : posts[index + 1].node
-        const next = index === 0 ? null : posts[index - 1].node
+        const next = index === 0
+          ? null
+          : posts[index - 1].node
         createPage({
           path: `post${edge.node.fields.slug}`,
           component: blogPost,

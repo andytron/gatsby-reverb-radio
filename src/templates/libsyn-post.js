@@ -68,7 +68,7 @@ const LibsynPost = ({ data, pageContext, location }) => {
               rel="prev"
             >
               ←{" "}
-              {previous.title.length > 18
+              {previous.title && previous.title.length > 18
                 ? previous.title.substring(0, 15) + "..."
                 : previous.title}
             </Link>
