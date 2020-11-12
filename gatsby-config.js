@@ -177,6 +177,12 @@ module.exports = {
     //     purgeOnly: [`/index.scss`],
     //   },
     // },
-    `gatsby-plugin-netlify`, // must be last in array
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        mergeLinkHeaders: false,
+        mergeCachingHeaders: false
+      },
+    }
   ],
 }
