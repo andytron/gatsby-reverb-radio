@@ -128,7 +128,7 @@ export const pageQuery = graphql`
         slug
       }
     }
-    libsyn: libsynJson(id: {eq: "87c5e6b5-d41c-5702-8d0c-5f3135b54c90"}) {
+    libsyn: libsynJson(fields: {slug: {eq: "2020-07-10-reverberation_401-mp3"}}) {
       node {
         title
       }
