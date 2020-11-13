@@ -51,7 +51,7 @@ const BlogPost = ({ data, pageContext, location }) => {
           : next.frontmatter.title}{" "}
         →
       </Link>
-  } else if (next && next.id === "f928acb6-6340-5cc4-a6d8-58c9602a35bf") {
+  } else {
     nextPost = <Link
         to={`/post/${libsynPost.fields.slug}`}
         className="pagination__post--next"
