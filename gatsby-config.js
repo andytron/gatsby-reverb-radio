@@ -15,6 +15,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-serviceworker`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
