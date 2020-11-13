@@ -38,6 +38,31 @@ const BlogPost = ({ data, pageContext, location }) => {
   const libsynPost = data.libsyn
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
+  let nextPost;
+
+  if (next && next.frontmatter.templateKey === "blog-post") {
+    nextPost = <Link
+        to={`/post${next.fields.slug}`}
+        className="pagination__post--next"
+        rel="next"
+      >
+        {next.frontmatter.title.length > 18
+          ? next.frontmatter.title.substring(0, 15) + "..."
+          : next.frontmatter.title}{" "}
+        →
+      </Link>
+  } else if (next && next.id === "f928acb6-6340-5cc4-a6d8-58c9602a35bf") {
+    nextPost = <Link
+        to={`/post/${libsynPost.fields.slug}`}
+        className="pagination__post--next"
+        rel="next"
+      >
+        {libsynPost.node.title.length > 18
+          ? libsynPost.node.title.substring(0, 15) + "..."
+          : libsynPost.node.title}{" "}
+        →
+      </Link>
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -72,30 +97,7 @@ const BlogPost = ({ data, pageContext, location }) => {
           )}
         </li>
         <li>
-          {next && next.frontmatter.templateKey === "blog-post" && (
-            <Link
-              to={`/post${next.fields.slug}`}
-              className="pagination__post--next"
-              rel="next"
-            >
-              {next.frontmatter.title.length > 18
-                ? next.frontmatter.title.substring(0, 15) + "..."
-                : next.frontmatter.title}{" "}
-              →
-            </Link>
-          )}
-          {next && next.id === "f928acb6-6340-5cc4-a6d8-58c9602a35bf" && (
-            <Link
-              to={`/post/${libsynPost.fields.slug}`}
-              className="pagination__post--next"
-              rel="next"
-            >
-              {libsynPost.node.title.length > 18
-                ? libsynPost.node.title.substring(0, 15) + "..."
-                : libsynPost.node.title}{" "}
-              →
-            </Link>
-          )}
+          {nextPost}
         </li>
       </ul>
     </Layout>

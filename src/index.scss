@@ -95,6 +95,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0 auto 1.75rem;
     width: 100%;
     padding: 0px;
     list-style: none;
@@ -103,7 +104,7 @@ body {
 
     @media (max-width: 30rem) {
       margin-left: 0;
-      font-size: 10px;
+      font-size: 9.5px;
     }
 
     &-item {
@@ -126,8 +127,10 @@ body {
 }
 
 .blog-post {
+  padding: 1rem 0;
+
   @media (min-width: 30rem) {
-    margin: 0 auto;
+    margin: 1rem auto;
     max-width: 512px;
   }
 
@@ -137,6 +140,7 @@ body {
   }
 
   &__title {
+    font-size: 1.5rem;
     font-family: $serif;
     letter-spacing: 2px;
   }
@@ -144,6 +148,7 @@ body {
   &__link {
     box-shadow: none;
     font-weight: 700;
+    text-decoration: none;
     color: #666;
   }
 
@@ -151,6 +156,7 @@ body {
     p,
     a {
       font-size: 14px;
+      line-height: 1.75;
     }
 
     p:last-of-type {
@@ -170,6 +176,7 @@ body {
 
   &__icon {
     box-shadow: none;
+    text-decoration: none;
     color: #666;
   }
 }
@@ -190,11 +197,12 @@ body {
   }
 
   &__title {
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    font-size: 2.5rem;
     font-family: $serif;
+    font-weight: 700;
     letter-spacing: 2px;
     color: #666;
-    font-weight: 700;
 
     @media (max-width: 30rem) {
       font-size: 1.5rem;
@@ -216,6 +224,7 @@ body {
   &__content,
   p {
     font-size: 14px;
+    line-height: 1.75;
 
     @media (min-width: 30rem) {
       margin: 0 auto 1rem;
@@ -289,6 +298,7 @@ body {
 
   &__home {
     display: flex;
+    align-items: center;
     justify-content: center;
     margin: 0px auto;
     max-width: 50%;
@@ -318,7 +328,7 @@ body {
 
     @media (max-width: 30rem) {
       margin-left: 0;
-      font-size: 14px;
+      font-size: 12px;
     }
   }
 }
@@ -326,6 +336,7 @@ body {
 .footer {
   margin: 24px;
   font-size: 14px;
+  line-height: 1.75;
   text-align: center;
   color: #333;
 
