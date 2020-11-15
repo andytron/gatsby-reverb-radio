@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 // import { navigate } from 'gatsby-link'
 
 import Nav from "../components/nav"
@@ -33,14 +33,14 @@ class ContactPage extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    let contactForm = event.target;
-    // let contactForm = document.getElementById('contact-form');
+    let form = event.target;
+    // let form = document.getElementById('contact-form');
 
-    fetch('/',{
+    fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        'form-name': contactForm.getAttribute('name'),
+        'form-name': form.getAttribute('name'),
         ...this.state
       })
     })
@@ -66,17 +66,17 @@ class ContactPage extends React.Component {
             name="contact-form"
             method="post"
             // action="/thanks/"
-            data-netlify="true"
+            netlify="true"
             netlify-honeypot="bot-field"
-            data-netlify-recaptcha="true"
+            // data-netlify-recaptcha="true"
             onSubmit={this.handleSubmit}
           >
-            <input type="hidden" name="form-name" value="contact-form" />
             <input
               type="hidden"
               name="bot-field"
               onChange={this.handleInputChange}
             />
+            <input type="hidden" name="form-name" value="contact-form" />
             <label htmlFor="contact-name">Name</label>
             <input
               id="contact-name"
@@ -108,8 +108,8 @@ class ContactPage extends React.Component {
               required
               onChange={this.handleInputChange}
             />
-            <ReCAPTCHA sitekey="process.env.SITE_RECAPTCHA_KEY" />
-            <Button type="submit" >
+            {/* <ReCAPTCHA sitekey="process.env.SITE_RECAPTCHA_KEY" /> */}
+            <Button type="submit">
               Submit
             </Button>
             {/* <button type="submit">Submit</button> */}
