@@ -106,7 +106,6 @@ export const pageQuery = graphql`
           podcast
           instagram
           twitter
-          email
         }
       }
     }

@@ -16,7 +16,7 @@ export const SitePageTemplate = ({ content, contentComponent }) => {
 
 const SitePage = ({ data, location }) => {
   const { mdx: post } = data
-  const siteTitle = data.site.siteMetadata.title
+  const siteTitle = post.frontmatter.title
 
   return (
     <Layout location={location} title={siteTitle}>

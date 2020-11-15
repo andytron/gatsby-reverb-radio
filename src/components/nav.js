@@ -48,9 +48,9 @@ function Nav() {
                 </Link>
               </li>
               <li className="nav__list-item">
-                <a href={`mailto:${links.email}`} className="nav__link">
+                <Link to="/contact" className="nav__link">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </Container>
@@ -70,7 +70,6 @@ const navQuery = graphql`
           podcast
           instagram
           twitter
-          email
         }
       }
     }

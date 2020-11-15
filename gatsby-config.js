@@ -9,7 +9,6 @@ module.exports = {
       podcast: `reverberation-radio/id520739212`,
       instagram: `reverberationradio`,
       twitter: `reverb_radio`,
-      email: `gm@tikirocket.com`,
     },
   },
   plugins: [
