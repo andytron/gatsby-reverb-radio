@@ -17,11 +17,13 @@ const Footer = ({ location }) => {
           © {new Date().getFullYear()},{` `}
           <a href="https://tikirocket.com">Tiki Rocket</a>
         </div>
-        <div className="footer__dmca">
-          <Link to="/dmca" className="footer__dmca--link">
-            DMCA
-          </Link>{" "}
-        </div>
+        {!location.pathname.includes("/dmca") && (
+          <div className="footer__dmca">
+            <Link to="/dmca" className="footer__dmca--link">
+              DMCA
+            </Link>{" "}
+          </div>
+        )}
       </div>
     </footer>
   )

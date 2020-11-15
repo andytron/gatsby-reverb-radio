@@ -34,7 +34,6 @@ class ContactPage extends React.Component {
   handleSubmit = event => {
     event.preventDefault()
     let form = event.target;
-    // let form = document.getElementById('contact-form');
 
     fetch('/', {
       method: 'POST',
@@ -65,10 +64,10 @@ class ContactPage extends React.Component {
             // id="contact-form"
             name="contact-form"
             method="post"
-            // action="/thanks/"
-            netlify="true"
+            // action="/thanks"
+            data-netlify-recaptcha="true"
+            data-netlify="true"
             netlify-honeypot="bot-field"
-            // data-netlify-recaptcha="true"
             onSubmit={this.handleSubmit}
           >
             <input
@@ -109,10 +108,10 @@ class ContactPage extends React.Component {
               onChange={this.handleInputChange}
             />
             {/* <ReCAPTCHA sitekey="process.env.SITE_RECAPTCHA_KEY" /> */}
+            <div data-netlify-recaptcha="true" />
             <Button type="submit">
               Submit
             </Button>
-            {/* <button type="submit">Submit</button> */}
           </form>
         </div>
       </Layout>

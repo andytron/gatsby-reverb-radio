@@ -16,11 +16,12 @@ export const SitePageTemplate = ({ content, contentComponent }) => {
 
 const SitePage = ({ data, location }) => {
   const { mdx: post } = data
-  const siteTitle = post.frontmatter.title
+  const pageTitle = post.frontmatter.title
+  const siteTitle = data.site.siteMetadata.title
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={siteTitle} />
+      <SEO title={pageTitle} />
       <Nav />
       <SitePageTemplate
         content={post.body}
