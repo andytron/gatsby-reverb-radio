@@ -255,7 +255,6 @@ body {
       display: flex;
       flex-direction: column;
       font-size: 14px;
-      font-family: $open-sans;
 
       label {
         @include visually-hidden();
@@ -266,6 +265,7 @@ body {
         padding: 0.5rem;
         box-shadow: none;
         background: none;
+        font-family: $open-sans;
       }
 
       input {
@@ -284,6 +284,8 @@ body {
       button {
         margin-top: 1rem;
         max-width: 9rem;
+        border-radius: 0;
+        font-family: $open-sans;
       }
     }
 
