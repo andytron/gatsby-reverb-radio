@@ -36,7 +36,10 @@ class ContactPage extends React.Component {
 
     fetch('/', {
       method: 'POST',
-      // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: {
+        'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
       body: encode({
         'form-name': form.getAttribute('name'),
         ...this.state
@@ -58,7 +61,6 @@ class ContactPage extends React.Component {
           <h2>Contact</h2>
           <form
             name="contact-form"
-            // method="post"
             action="/thanks"
             data-netlify-recaptcha="true"
             data-netlify="true"
