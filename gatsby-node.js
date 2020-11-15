@@ -4,7 +4,7 @@ const moment = require(`moment`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const blogPost = path.resolve(`./src/templates/blog-post.js`)
 const libsynPost = path.resolve(`./src/templates/libsyn-post.js`)
-const sitePage = path.resolve(`./src/templates/live-page.js`)
+const sitePage = path.resolve(`./src/templates/site-page.js`)
 const indexPage = path.resolve(`./src/templates/index.js`)
 
 function buildSlug(date, title) {

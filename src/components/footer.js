@@ -12,9 +12,16 @@ const Footer = ({ location }) => {
         ( ( ( REVERBERATION ) ) )
       </Link>{" "}
       -
-      <div className="footer__copyright">
-        © {new Date().getFullYear()},{` `}
-        <a href="https://tikirocket.com">Tiki Rocket</a>
+      <div className="footer__legal">
+        <div className="footer__copyright">
+          © {new Date().getFullYear()},{` `}
+          <a href="https://tikirocket.com">Tiki Rocket</a>
+        </div>
+        <div className="footer__dmca">
+          <Link to="/dmca" className="footer__dmca--link">
+            DMCA
+          </Link>{" "}
+        </div>
       </div>
     </footer>
   )

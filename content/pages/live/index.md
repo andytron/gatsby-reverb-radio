@@ -1,5 +1,5 @@
 ---
-templateKey: "live-page"
+templateKey: "site-page"
 path: /live
 slug: live
 title: Live

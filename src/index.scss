@@ -1,6 +1,6 @@
 $serif: "Libre Baskerville", "Georgia", serif;
-$sans-serif: "Barlow Condensed", "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
-  sans-serif;
+$sans-serif: "Barlow Condensed", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$open-sans: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 @mixin visually-hidden {
   position: absolute !important;
@@ -22,6 +22,7 @@ body {
   h5,
   h6 {
     font-family: $sans-serif;
+    letter-spacing: 0.2rem;
   }
 }
 
@@ -237,6 +238,10 @@ body {
       margin-bottom: 1.5rem;
     }
 
+    ul, ol {
+      margin-left: 2rem;
+    }
+
     img {
       max-width: 100%;
       height: auto;
@@ -353,6 +358,23 @@ body {
 
   &__link {
     letter-spacing: 2px;
+  }
+
+  &__legal {
+    position: relative;
+  }
+
+  &__dmca {
+    @media (min-width: 64rem) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    &--link {
+      font-size: 10px;
+      text-decoration: none;
+    }
   }
 }
 

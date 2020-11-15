@@ -130,6 +130,7 @@ module.exports = {
           `raleway:300,400,600,700,900`,
           `libre baskerville:300,400,600,700`,
           `barlow condensed:300,400,500,600,700,800,900`,
+          `open sans:300,400,600,700,800`,
         ],
         display: `swap`,
       },
