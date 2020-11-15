@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-// import ReCAPTCHA from "react-google-recaptcha";
-// import { navigate } from 'gatsby-link'
+import { navigate } from 'gatsby-link'
 
 import Nav from "../components/nav"
 import Layout from "../components/layout"
@@ -43,10 +42,7 @@ class ContactPage extends React.Component {
         ...this.state
       })
     })
-      .then(() => {
-        alert('Thanks! Your message has been sent.')
-        // navigate(form.getAttribute('action'))
-      })
+      .then(() => navigate(form.getAttribute('action')))
       .catch((error) => alert(error))
   }
 
@@ -61,12 +57,11 @@ class ContactPage extends React.Component {
         <div className="post__content">
           <h2>Contact</h2>
           <form
-            // id="contact-form"
             name="contact-form"
             method="post"
-            // action="/thanks"
+            action="/thanks"
             data-netlify-recaptcha="true"
-            data-netlify="true"
+            netlify="true"
             netlify-honeypot="bot-field"
             onSubmit={this.handleSubmit}
           >
@@ -107,7 +102,6 @@ class ContactPage extends React.Component {
               required
               onChange={this.handleInputChange}
             />
-            {/* <ReCAPTCHA sitekey="process.env.SITE_RECAPTCHA_KEY" /> */}
             <div data-netlify-recaptcha="true" />
             <Button type="submit">
               Submit
