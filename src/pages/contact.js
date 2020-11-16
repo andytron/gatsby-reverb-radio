@@ -40,7 +40,7 @@ class ContactPage extends React.Component {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       body: encode({
-        'form-name': form.getAttribute('name'),
+        'form-name': 'contact',
         ...this.state
       })
     })
@@ -59,11 +59,11 @@ class ContactPage extends React.Component {
         <div className="post__content">
           <h2>Contact</h2>
           <form
-            name="contact-form"
+            name="contact"
             method="POST"
             action="/thanks"
             data-netlify-recaptcha="true"
-            netlify="true"
+            data-netlify="true"
             netlify-honeypot="bot-field"
             onSubmit={this.handleSubmit}
           >
@@ -72,7 +72,7 @@ class ContactPage extends React.Component {
               name="bot-field"
               onChange={this.handleInputChange}
             />
-            <input type="hidden" name="form-name" value="contact-form" />
+            <input type="hidden" name="form-name" value="contact" />
             <label htmlFor="contact-name">Name</label>
             <input
               id="contact-name"
