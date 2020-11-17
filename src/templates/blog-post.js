@@ -26,7 +26,7 @@ export const BlogPostTemplate = ({ post, content, contentComponent }) => {
       >
         {post.frontmatter.date}
       </p>
-      <MDXProvider components={shortcodes}>
+      <MDXProvider components={{...shortcodes}}>
         <PostContent content={content} />
       </MDXProvider>
     </div>
