@@ -19,4 +19,4 @@ tags:
 
 <AudioPlayer source={'https://traffic.libsyn.com/reverberationradio/Reverberation_366.mp3'} />
 
-<p><b><a href="http://traffic.libsyn.com/reverberationradio/Reverberation_366.mp3">Reverberation #366</a></b><br />1. Group Ismaelillo &ndash; Amanecer<br />2. Takanaka &ndash; &#20234;&#35910;&#29976;&#22799;&#32013;&#35910;&#22770;&#12426;<br />3. Breathers &ndash; Don&rsquo;t it Make you Feel<br />4. Lonnie Liston Smith &amp; The Cosmic Echoes &ndash; Love Beams<br />5. ORM &ndash; Tropic<br />6. Turquoise Days &ndash; Scattering Seeds<br />7. Le Pamplemousse &ndash; Gimme What you Got<br /></p>
+<p><b><a href="https://traffic.libsyn.com/reverberationradio/Reverberation_366.mp3">Reverberation #366</a></b><br />1. Group Ismaelillo &ndash; Amanecer<br />2. Takanaka &ndash; &#20234;&#35910;&#29976;&#22799;&#32013;&#35910;&#22770;&#12426;<br />3. Breathers &ndash; Don&rsquo;t it Make you Feel<br />4. Lonnie Liston Smith &amp; The Cosmic Echoes &ndash; Love Beams<br />5. ORM &ndash; Tropic<br />6. Turquoise Days &ndash; Scattering Seeds<br />7. Le Pamplemousse &ndash; Gimme What you Got<br /></p>

@@ -22,4 +22,4 @@ tags:
 
 <AudioPlayer source={'https://traffic.libsyn.com/reverberationradio/Reverberation_365.mp3'} />
 
-<p><b><a href="http://traffic.libsyn.com/reverberationradio/Reverberation_365.mp3">Reverberation #365</a><br /></b>1. Crumb - Nina<br />2. Better Person - Zakochany Cz&#322;owiek<br />3. Surfing - Hit The Spot<br />4. Zenit - Waitin&rsquo;<br />5. Yves Tumor - The Feeling When She Walks Away<br />6. Past Time - I Can Treat You Better (ft. Ariel Pink)<br />7. Pink Rhythm - Trust Me<br />8. The Silver Field - Rain</p>
+<p><b><a href="https://traffic.libsyn.com/reverberationradio/Reverberation_365.mp3">Reverberation #365</a><br /></b>1. Crumb - Nina<br />2. Better Person - Zakochany Cz&#322;owiek<br />3. Surfing - Hit The Spot<br />4. Zenit - Waitin&rsquo;<br />5. Yves Tumor - The Feeling When She Walks Away<br />6. Past Time - I Can Treat You Better (ft. Ariel Pink)<br />7. Pink Rhythm - Trust Me<br />8. The Silver Field - Rain</p>

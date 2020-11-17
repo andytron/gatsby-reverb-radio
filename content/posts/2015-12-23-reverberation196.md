@@ -25,4 +25,4 @@ tags:
 
 <AudioPlayer source={'https://traffic.libsyn.com/reverberationradio/Reverberation_196.mp3'} />
 
-<p><b>Reverberation #196<br /></b><b><a href="http://traffic.libsyn.com/reverberationradio/Reverberation_196.mp3">download</a><br /></b>1. Mild High Club - Windowpane<br />2. Connan Mockasin - It's Choade My Dear<br />3. Dungen - Vara Snabb<br />4. Sugar Candy Mountain - Windows<br />5. Usha Khanna - Hotel Incidental Music (edit)&#8203;<br />6. Ja'afar Hassan - Palestinian<br />7. The Panthers - Bhairvi<br />8. Les Abranis - Chenagh Le Blues<br />9. Kamuran Akkor - &#304;kimiz Bir Fidan&#305;z</p>
+<p><b>Reverberation #196<br /></b><b><a href="https://traffic.libsyn.com/reverberationradio/Reverberation_196.mp3">download</a><br /></b>1. Mild High Club - Windowpane<br />2. Connan Mockasin - It's Choade My Dear<br />3. Dungen - Vara Snabb<br />4. Sugar Candy Mountain - Windows<br />5. Usha Khanna - Hotel Incidental Music (edit)&#8203;<br />6. Ja'afar Hassan - Palestinian<br />7. The Panthers - Bhairvi<br />8. Les Abranis - Chenagh Le Blues<br />9. Kamuran Akkor - &#304;kimiz Bir Fidan&#305;z</p>

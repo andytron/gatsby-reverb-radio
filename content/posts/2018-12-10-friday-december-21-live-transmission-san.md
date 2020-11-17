@@ -7,7 +7,7 @@ title: "Friday, December 21
   Design by Robbie Simon"
 date: 2018-12-10
 slug: post/180990043729/friday-december-21-live-transmission-san
-audio: http://traffic.libsyn.com/reverberationradio/Reverberation_____.mp3
+audio: https://traffic.libsyn.com/reverberationradio/Reverberation_____.mp3
 tags:
   - the chapel
   - folkyeah
@@ -20,7 +20,7 @@ tags:
  @thechapelsf @folkyeahevents
  Design by Robbie Simon](../images/8318535a5e4927c21c1436d9aff87ff353be6bdc393cd7cdedba838644c3901c.jpg)
 
-<AudioPlayer source={'http://traffic.libsyn.com/reverberationradio/Reverberation_____.mp3'} />
+<AudioPlayer source={'https://traffic.libsyn.com/reverberationradio/Reverberation_____.mp3'} />
 
 <p>Friday, December 21
 </p><p>live transmission

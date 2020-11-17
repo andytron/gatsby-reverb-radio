@@ -18,4 +18,4 @@ tags:
 
 <AudioPlayer source={'https://traffic.libsyn.com/reverberationradio/Reverberation_363.mp3'} />
 
-<p><b><a href="http://traffic.libsyn.com/reverberationradio/Reverberation_363.mp3">Reverberation #363</a></b><br />1. Homer Hossa - Yello<br />2. Guilherme Coutinho E O Grupo Salo - Rio Corrente<br />3. Dizzy K. - Omoge<br />4. Cat Stevens - Was Dog A Doughnut<br />5. Toshiki Kadomatsu - Secret lover<br />6. Joe Gibbs and the Professionals - Bionic Encounter<br />7. Quinteto Ternura - Linda Manh&atilde;<br />8. Warfield Spillers - Daddy's Little Girl</p>
+<p><b><a href="https://traffic.libsyn.com/reverberationradio/Reverberation_363.mp3">Reverberation #363</a></b><br />1. Homer Hossa - Yello<br />2. Guilherme Coutinho E O Grupo Salo - Rio Corrente<br />3. Dizzy K. - Omoge<br />4. Cat Stevens - Was Dog A Doughnut<br />5. Toshiki Kadomatsu - Secret lover<br />6. Joe Gibbs and the Professionals - Bionic Encounter<br />7. Quinteto Ternura - Linda Manh&atilde;<br />8. Warfield Spillers - Daddy's Little Girl</p>
