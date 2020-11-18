@@ -368,6 +368,16 @@ body {
       box-shadow: none;
       margin-left: 1rem;
     }
+
+    &--newer {
+      margin-right: 1rem;
+      color: #999;
+    }
+
+    &--older {
+      margin-left: 1rem;
+      color: #999;
+    }
   }
 
   &__post {

@@ -1,6 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import moment from "moment"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 import Nav from "../components/nav"
 import Layout from "../components/layout"
@@ -12,10 +14,7 @@ import { rhythm, scale } from "../utils/typography"
 export const LibsynPostTemplate = ({ post, content }) => {
   return (
     <div className="post">
-      <h1
-        className="post__title"
-        style={{ letterSpacing: "2px", color: "#666", fontWeight: "700" }}
-      >
+      <h1 className="post__title">
         {post.title}
       </h1>
       <p
@@ -28,7 +27,13 @@ export const LibsynPostTemplate = ({ post, content }) => {
         {moment(post.pubDate).format("MMMM Do, YYYY")}
       </p>
       {post.itunes.image && (
-        <img className="post__image" src={post.itunes.image} alt={post.title} />
+        <LazyLoadImage
+          className="post__image"
+          src={post.itunes.image}
+          alt={post.title}
+          effect="blur"
+          threshold="100"
+        />
       )}
       <AudioPlayer source={post.enclosure.url.replace(/\?.*$/g, "")} />
       <a href={post.enclosure.url.replace(/\?.*$/g, "")}>{post.title}</a>
@@ -44,10 +49,7 @@ const LibsynPost = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
-        title={post.title}
-        // description={post.frontmatter.description || post.excerpt}
-      />
+      <SEO title={post.title} />
       <LibsynPostTemplate
         post={post}
         content={post.content.encoded}

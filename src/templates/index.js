@@ -1,6 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import moment from "moment"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 
@@ -66,7 +68,12 @@ class Index extends React.Component {
                       style={{ marginTop: rhythm(1 / 2) }}
                     >
                       {node.node.itunes.image && (
-                        <img src={node.node.itunes.image} alt={title} />
+                        <LazyLoadImage
+                          src={node.node.itunes.image}
+                          alt={title}
+                          effect="blur"
+                          threshold="100"
+                        />
                       )}
                       <AudioPlayer
                         source={node.node.enclosure.url || node.node.link}
@@ -136,12 +143,7 @@ class Index extends React.Component {
               </Link>
             )}
             {isFirst && (
-              <p
-                style={{
-                  marginRight: "1rem",
-                  color: "#999",
-                }}
-              >
+              <p className="pagination__home--newer">
                 &larr; Newer
               </p>
             )}
@@ -170,12 +172,7 @@ class Index extends React.Component {
               </Link>
             )}
             {isLast && (
-              <p
-                style={{
-                  marginLeft: "1rem",
-                  color: "#999",
-                }}
-              >
+              <p className="pagination__home--older">
                 Older &rarr;
               </p>
             )}
@@ -229,7 +226,6 @@ export const pageQuery = graphql`
           fields {
             slug
           }
-          excerpt
           body
           frontmatter {
             templateKey

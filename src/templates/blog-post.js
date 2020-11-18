@@ -66,10 +66,7 @@ const BlogPost = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
-        title={post.frontmatter.title}
-        // description={post.frontmatter.description || post.excerpt}
-      />
+      <SEO title={post.frontmatter.title} />
       <BlogPostTemplate
         post={post}
         content={post.body}
@@ -119,7 +116,6 @@ export const pageQuery = graphql`
       frontmatter: { templateKey: { eq: "blog-post" } }
     ) {
       id
-      excerpt(pruneLength: 160)
       body
       frontmatter {
         title
