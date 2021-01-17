@@ -292,6 +292,14 @@ body {
       max-width: 100%;
       height: auto;
     }
+
+    .bit-widget {
+      font-family: $serif;
+      
+      & * {
+        font-weight: normal !important;
+      }
+    }
   }
 }
 
